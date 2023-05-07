@@ -4,7 +4,6 @@ import sys
 
 #needed to publish tweet and reply 
 import tweepy
-import time
 from keys import * 
 # import Keys from keys.py
 
