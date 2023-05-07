@@ -1,0 +1,13 @@
+
+# edit later 
+# these are the keys 
+CONSUMER_KEY = 'Enter Your Consumer Key Here'
+CONSUMER_SECRET = 'Enter Your Consumer Secret Key Here'
+ACCESS_KEY = 'Enter Your Access Key Here'
+ACCESS_SECRET = 'Enter Your Access Secret Key Here'
+
+API_KEY=7PI9x7lKBPermlBqf0KkDEJq4
+API_SECRET=pdhGhWynjjtY0HV49MDhUC6cJaqqt4rcSWvoxNvp6aO1Nkldps
+BEARER_TOKEN=AAAAAAAAAAAAAAAAAAAAAMlFmwEAAAAAXOXAOsS47CGncoOyCg1uTMrCKls%3Dq2KaJyVkjDXC2QhLxmdxINYYcMGgBtzYdLpgs8Q1kmnHXWZDYW
+ACCESS_TOKEN=1648372722446241794-3QYOPbL3lDOZ07pxnhKqFBxMogdVzr
+ACCESS_TOKEN_SECRET=3KYrn54Tk6jR2pKbwPCI0kA45i0ESuelJpYfsILhd43K8
