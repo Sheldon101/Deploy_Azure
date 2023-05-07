@@ -45,12 +45,13 @@ def tweet(message: str):
 #1. a tweet exist
 #2.  within the timestamp 
 
+#NOT FINISHED NEED TO ADD MORE TO THIS FUNCTION 
 # Reply to the tweets
-def reply_to_tweet():
+#def reply_to_tweet():
   #add last seen id for running script from last endpoint
-    old_id = retrieve_old_id(id_file)
-        old_id = #get new value 
-        store_last_seen_id(old_id, id_file)
+ #   old_id = retrieve_old_id(id_file)
+  #      old_id = #get new value 
+   #     store_last_seen_id(old_id, id_file)
         # Replace 'Something' with a text you want to find
  # if we are replying neew to reply--> update.status()      
 # the ID of the tweet to be replied to
