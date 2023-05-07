@@ -1,13 +1,23 @@
+#this keys file should located in secret folder
 
-# edit later 
-# these are the keys 
-CONSUMER_KEY = 'Enter Your Consumer Key Here'
-CONSUMER_SECRET = 'Enter Your Consumer Secret Key Here'
-ACCESS_KEY = 'Enter Your Access Key Here'
-ACCESS_SECRET = 'Enter Your Access Secret Key Here'
+#consumer_key=environ["API_KEY"]
+#consumer_secret=environ["API_SECRET"]                     
 
-API_KEY=7PI9x7lKBPermlBqf0KkDEJq4
-API_SECRET=pdhGhWynjjtY0HV49MDhUC6cJaqqt4rcSWvoxNvp6aO1Nkldps
-BEARER_TOKEN=AAAAAAAAAAAAAAAAAAAAAMlFmwEAAAAAXOXAOsS47CGncoOyCg1uTMrCKls%3Dq2KaJyVkjDXC2QhLxmdxINYYcMGgBtzYdLpgs8Q1kmnHXWZDYW
-ACCESS_TOKEN=1648372722446241794-3QYOPbL3lDOZ07pxnhKqFBxMogdVzr
-ACCESS_TOKEN_SECRET=3KYrn54Tk6jR2pKbwPCI0kA45i0ESuelJpYfsILhd43K8
+#API_KEY=7PI9x7lKBPermlBqf0KkDEJq4
+#API_SECRET=pdhGhWynjjtY0HV49MDhUC6cJaqqt4rcSWvoxNvp6aO1Nkldps
+CONSUMER_KEY = '7PI9x7lKBPermlBqf0KkDEJq4'
+CONSUMER_SECRET ='pdhGhWynjjtY0HV49MDhUC6cJaqqt4rcSWvoxNvp6aO1Nkldps'
+
+# bearer_token=environ["BEARER_TOKEN"],
+BEARER_TOKEN='AAAAAAAAAAAAAAAAAAAAAMlFmwEAAAAAXOXAOsS47CGncoOyCg1uTMrCKls%3Dq2KaJyVkjDXC2QhLxmdxINYYcMGgBtzYdLpgs8Q1kmnHXWZDYW'
+
+#ACCESS_TOKEN=1648372722446241794-3QYOPbL3lDOZ07pxnhKqFBxMogdVzr
+#ACCESS_TOKEN_SECRET=3KYrn54Tk6jR2pKbwPCI0kA45i0ESuelJpYfsILhd43K8
+ACCESS_KEY = '1648372722446241794-3QYOPbL3lDOZ07pxnhKqFBxMogdVzr'
+ACCESS_SECRET = '3KYrn54Tk6jR2pKbwPCI0kA45i0ESuelJpYfsILhd43K8'
+
+
+
+
+
+
