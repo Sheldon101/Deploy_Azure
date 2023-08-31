@@ -1,4 +1,5 @@
-#this keys file should located in secret folder
+#this keys file should located in secret folder.
+#These keys are inactive !!!
 
 #consumer_key=environ["API_KEY"]
 #consumer_secret=environ["API_SECRET"]                     
