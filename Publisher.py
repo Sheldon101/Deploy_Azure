@@ -1,55 +1,35 @@
-"""
-Publisher
-
-notes:
-pip install tweepy
-"""
-
+# needed to get the file path
 import datetime
-import os  # to get the file path
+import os
 import tweepy
 
-import config  # secrets; not pushed to repository
-import constants
 
-MINUTES = 10  # minutes between reply posts
-
-
-time_file = constants.TRANSCRIBER_TEXT_FILE_TIME  # file used to store last used or retrieved id
-msg_file = constants.TRANSCRIBER_TEXT_FILE
-
-# secrets; not pushed to repository
-api_key = config.API_KEY
-api_key_secret = config.API_KEY_SECRET
-bearer_token = config.BEARER_TOKEN
-access_token = config.ACCESS_TOKEN
-access_token_secret = config.ACCESS_TOKEN_SECRET
-
+# File used to store last used or retrieved id
+time_file = 'd_t_stamp.txt'
+msg_file = 'message.txt'
+# Before running the code you need to install tweepy package to locally
+api_key = "XXX"
+api_key_secret = "XXX"
+bearer_token = "XXX"
+access_token = "XXX"
+access_token_secret = "XXX"
 # connect to client
 client = tweepy.Client(bearer_token, api_key, api_key_secret, access_token, access_token_secret)
-
 # authorize to use tweepy functions
 auth = tweepy.OAuthHandler(api_key, api_key_secret, access_token, access_token_secret)
 api = tweepy.API(auth)
 
 
+# function that writes the time into the old id file when nothing exist in file
 def write_record(time_stamp):
-    """Writes the time into the old id file when nothing exist in file.
-
-    :param time_stamp: time stamp
-    :return: void
-    """
     f_write = open(time_file, 'w')
     f_write.write(str(time_stamp))
     f_write.close()
     return
 
 
+# checks whether the file contains a recorder
 def record(file):
-    """
-    :param file: file path
-    :return: true if the file contains a recorder, false otherwise
-    """
     if os.stat(file).st_size == 0:
         print("No Record")
         return False
@@ -95,7 +75,7 @@ def compare_times(n_time1, n_time2):
     print('new post time:', t2.time())
     # determine whether diff of time
     elapsed = t2 - t1
-    if elapsed > datetime.timedelta(minutes=MINUTES):
+    if elapsed > datetime.timedelta(minutes=10):
         print("exceed time limit, new post")
         reply_status = False
     elif t1.time() == t2.time():
@@ -107,13 +87,8 @@ def compare_times(n_time1, n_time2):
     return reply_status
 
 
+# functions will replace old time with new time inside the record
 def replace_time(old_time, new_time):
-    """Replace old time with new time inside the record.
-
-    :param old_time: original time of post
-    :param new_time: updated time of post
-    :return: old_time
-    """
     with open(time_file, 'r') as f:
         data = f.read()
         data = data.replace(old_time, new_time)
@@ -122,18 +97,20 @@ def replace_time(old_time, new_time):
     return old_time
 
 
+# function to read from file
 def read_file(filename):
     with open(filename, 'r') as f:
         text = f.read()
     return text
 
 
+# function to read out and post tweet
 def tweet(message: str):
     client.create_tweet(text=message)
     print("tweet is now in twitter")
 
 
-def run():
+def main():
     # Task: determine if we have a file for message
     text_in_file = record(msg_file)
     if text_in_file:
@@ -141,8 +118,7 @@ def run():
         if not record_in_file:
             time_post = generate_time()
             write_record(time_post)
-            message = read_file(msg_file)
-            tweet(message)
+            # tweet(message)
         else:
             msg_in_file = read_file(msg_file)
             old_post_s_char = read_file(time_file)
@@ -161,19 +137,19 @@ def run():
                 reply_to_post = compare_times(n_time1, n_time2)
                 if reply_to_post:
                     print(" reply, add timestamp to the tweet")
-                    time_stamp = "\n[\'reply\' to: " + reference_time + "]"
+                    time_stamp = "\n This is a follow tweet to :" + reference_time
                     message = msg_in_file + time_stamp
                     print(message)
-                    tweet(message)
+                    # tweet(message)
                 else:
                     print("a new post")
-                    message = msg_in_file
-                    tweet(message)
+#                   tweet(message)
             else:
                 print("just tweet a new post, day(s) late")
-                message = msg_in_file
-                tweet(message)
+#               tweet(message)
     else:
         print("No transmission in file")
 
-# end of publisher
+
+if __name__ == "__main__":
+    main()
